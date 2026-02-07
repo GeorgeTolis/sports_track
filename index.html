@@ -31,6 +31,15 @@
                 <i data-lucide="menu" id="menu-icon"></i>
             </button>
         </div>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-slate-950 z-[60] flex flex-col items-center justify-center gap-8 text-2xl font-bold transition-transform duration-300 translate-x-full md:hidden">
+            <button id="close-btn" class="absolute top-6 right-6 p-2">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <a href="#top" class="nav-link mobile-item">Home</a>
+            <a href="#features" class="nav-link mobile-item">Features</a>
+            <a href="#download" class="nav-link mobile-item bg-orange-600 px-8 py-3 rounded-full">Download</a>
+        </div>
     </nav>
 
     <section id="top" class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">

@@ -15,11 +15,27 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile Menu Toggle (Simplified)
+// Mobile Menu Toggle
 const menuBtn = document.getElementById('menu-btn');
-menuBtn.addEventListener('click', () => {
-    // In a real app, you'd toggle a mobile menu overlay here
-    alert('Mobile menu clicked!');
+const closeBtn = document.getElementById('close-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-item');
+
+// Function to open/close menu
+const toggleMenu = (open) => {
+    if (open) {
+        mobileMenu.classList.remove('translate-x-full');
+    } else {
+        mobileMenu.classList.add('translate-x-full');
+    }
+};
+
+menuBtn.addEventListener('click', () => toggleMenu(true));
+closeBtn.addEventListener('click', () => toggleMenu(false));
+
+// Close menu when a link is clicked
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
 });
 
 // Populate Features
@@ -62,7 +78,7 @@ features.forEach(f => {
 });
 
 // Select all links that have an href starting with #
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link, .mobile-item');
 
 navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
@@ -71,10 +87,9 @@ navLinks.forEach(link => {
 
         // Get the target ID from the href (e.g., "#features")
         const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-
+        
         // Manually scroll to the section
-        if (targetId === "#top") {
+        if (targetId === "#top" || targetId === "#") {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
             const targetSection = document.querySelector(targetId);
@@ -84,6 +99,7 @@ navLinks.forEach(link => {
         }
     });
 });
+
 
 // Re-run Lucide for dynamic elements
 lucide.createIcons();
