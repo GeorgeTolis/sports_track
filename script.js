@@ -6,10 +6,12 @@ const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         navbar.classList.add('nav-scrolled');
-        navbar.classList.remove('bg-transparent', 'py-6');
+        navbar.style.paddingTop = "1rem";
+        navbar.style.paddingBottom = "1rem";
     } else {
         navbar.classList.remove('nav-scrolled');
-        navbar.classList.add('bg-transparent', 'py-6');
+        navbar.style.paddingTop = "1.5rem";
+        navbar.style.paddingBottom = "1.5rem";
     }
 });
 
