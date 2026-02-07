@@ -1,0 +1,28 @@
+/* Custom utility classes to match React logic */
+
+.avatar {
+    @apply w-8 h-8 rounded-full border-2 border-slate-950 bg-slate-800 overflow-hidden;
+}
+
+.mock-item {
+    @apply flex gap-3 p-2 bg-slate-800/50 rounded-xl h-16;
+}
+
+.mock-item::before {
+    content: '';
+    @apply w-12 h-12 rounded-lg bg-slate-700;
+}
+
+.download-btn {
+    @apply flex items-center gap-3 bg-black text-white px-8 py-3 rounded-2xl hover:bg-slate-900 transition-all;
+}
+
+/* Navbar Scrolled State (applied via JS) */
+.nav-scrolled {
+    @apply bg-slate-950/90 backdrop-blur-md py-4 border-b border-slate-800;
+}
+
+/* Feature Card Hover */
+.feature-card {
+    @apply p-8 bg-slate-900 border border-slate-800 rounded-3xl hover:border-orange-500/50 transition-all group;
+}
